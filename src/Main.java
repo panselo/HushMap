@@ -2,13 +2,17 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<Targa, Proprietario> hm1 = new HashMap<>();
-        Targa t1 = new Targa("GP459YJ");
-        Targa t2 = new Targa("HP627JF");
-        Targa t3 = new Targa("ROCCHISEBY");
-        hm1.put(t1, new Proprietario("Carlo", "Piacentini", "JBNPG80A01H501Z"));
-        hm1.put(t2, new Proprietario("Denis", "Fanpage", "JHTSF67A03H792S"));
-        hm1.put(t3, new Proprietario("Sebastiano", "Rocchiele", "SGDTE45A79H235D"));
+        HashMap<Targa, Proprietario> registro = new HashMap<>();
 
+        registro.put(new Targa("AB123CD"), new Proprietario("Mario", "Rossi", "RSSMRA80A01H501Z"));
+        registro.put(new Targa("EF456GH"), new Proprietario("Luigi", "Bianchi", "BNCGLG85B02H501Y"));
+        registro.put(new Targa("IJ789KL"), new Proprietario("Anna", "Verdi", "VRDANN90C03H501X"));
+
+        registro.put(new Targa("AB123CD"), new Proprietario("Giulia", "Neri", "NRIGLL95D04H501W"));
+
+        System.out.println("Contenuto del registro:");
+        registro.forEach((targa, proprietario) -> System.out.println(targa + " → " + proprietario));
+
+        System.out.println("\nNota: Quando è stata inserita una targa duplicata (AB123CD), il proprietario precedente è stato sovrascritto.");
     }
 }
